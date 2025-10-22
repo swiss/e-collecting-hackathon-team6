@@ -124,7 +124,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 ## Team Members
 
-- Reto Koenig/GitHub Account (role)
+- Reto Koenig/knr1 (role)
 - Philipp Locher/philoc (role)
 - Name/GitHub Account (role)
 - ...

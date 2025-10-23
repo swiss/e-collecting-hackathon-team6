@@ -97,9 +97,9 @@ The voter has now been given the ability to also participate electronically — 
         
 - After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
     
-    - All encrypted $\gamma$ values from electronic votes ($E$)
+    - All encrypted $\gamma$ values from electronic votes ($e$)
         
-    - All encrypted $\gamma$ values from paper submissions ($F$)
+    - All encrypted $\gamma$ values from paper submissions ($f$)
         
 - Duplicates are detected and resolved without revealing the voter’s identity.
     

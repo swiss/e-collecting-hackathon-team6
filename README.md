@@ -81,7 +81,7 @@ The voter has now been given the ability to also participate electronically — 
 
 #### b) Vote Submission
 
-- For voting, the voter can now also chose the electronic channel: Therefore they create  the mentioned **zero-knowledge proof of eligibility** along with an **encryption of `γ`** in their app and send it to the **Public Bulletin Board**:
+- For voting, the voter can now also chose the electronic channel: Therefore they create  the mentioned **zero-knowledge proof of eligibility** along with an **encryption of $\gamma$** in their app and send it to the **Public Bulletin Board**:
     
     - $e = E_{pk}(\gamma)$
         
@@ -97,9 +97,9 @@ The voter has now been given the ability to also participate electronically — 
         
 - After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
     
-    - All encrypted $\gamma$ values from electronic votes ($e$)
+    - All encrypted $\gamma$ values from electronic votes ($E$)
         
-    - All encrypted $\gamma$ values from paper submissions ($f$)
+    - All encrypted $\gamma$ values from paper submissions ($F$)
         
 - Duplicates are detected and resolved without revealing the voter’s identity.
     

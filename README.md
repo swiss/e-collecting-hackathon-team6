@@ -1,4 +1,4 @@
-# 6) Anonyme Unterstützungsbekundungen
+# 6) Anonymous Participation of Eligible Voters
 
 *Over the course of two days, you will develop your solution for collecting electronic signatures for popular initiatives and referendums from A to Z, addressing the 10 topics outlined in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). Your prototype can be conceptual, clickable, and/or technical. Either way, you should clearly present the interactions and data flows between actors, software, and infrastructure components over time, as well as the user experience of these actors.*
 
@@ -21,9 +21,9 @@
 --------
 
 # Privacy-Preserving Verifiable Hybrid E-Collecting
-_A Trust-Minimized Protocol for Gradual Transition to Verifiable Electronic Signature Collection_
+_A Trust-Minimized Protocol for Gradual Transition to Verifiable E-Collecting_
 
-This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for secure and anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees:
+This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees:
 
 - No duplicate participations
 - Seamless 'upgrade' path from paper to electronic participation
@@ -32,6 +32,12 @@ This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106
 
 Despite its cryptographic rigor, the system remains **lightweight** and **privacy-preserving** at scale.
 
+**LH15** provides the following security properties on cryptographic level as a Zero knowledge proof (ZKP): 
+An anonymous Set-membership-proof with single use Rate-Limiter under zero knowledge. 
+
+Semantically, the **ZKP** provides the following proof: "I am a member of the eligibility set, and I have not yet voted on that matter."
+
+In the **LH15** paper the complete protocol run is provided in a concise way in Figure 3.
 ## Key Concept: Seamless Bootstrapping from Paper to Hybrid
 
 The protocol enables a **simple initial deployment** that builds directly on **current paper-based processes**, then **evolves naturally** into a full hybrid system — without requiring abrupt system changes or voter behavior shifts. The eventual transition to the pure electronic form provides everlasting participation privacy.
@@ -40,52 +46,60 @@ The protocol enables a **simple initial deployment** that builds directly on **c
 
 ### 1. **Start: Paper-Only Collection Using Cryptographic Anchors**
 
-- Each municipality associates a **secret value `γ` (gamma)** with every eligible voter.
+- Each municipality associates a **secret value $\gamma$ (gamma)** with every eligible voter.
     
-- Upon receiving a valid **paper signature**, the municipality:
+- Upon receiving a valid **paper signature (vote)**, the municipality:
     
-    - Encrypts the corresponding `γ` using the public encryption key `pk` for the given event.
+    - Encrypts the corresponding $\gamma$ using the public encryption key $pk$ for the given event.
         
-    - Posts the encrypted value `f = E_pk(γ)` to the **Public Bulletin Board (PBB)** over an **authenticated channel**
+    - Posts the encrypted value $f = E_{pk}(\gamma)$ to the **Public Bulletin Board (PBB)** over an **authenticated channel**
         
-- This step anchors each participation cryptographically — **without requiring** any **voter-side infrastructure**.
+- This step anchors each vote cryptographically — **without requiring** any **voter-side infrastructure**.
       
 The system remains fully paper-based but already supports:
-- **The electronic universal verifiable tallying**
-- **Participation Verifiability**
+- **Electronic universal verifiable tallying**
+- **Electronic Participation Verifiability**
 - **Eligibility Verifiability**
     
 
-### 2. **Transition: Voter Registers for Electronic Participation**
+### 2. **Full Hybrid: Dual Submission Channels**
+If the municipality is ready, it then opens the e-collecting channel towards its citizens. 
+#### a) Register for Electronic Participation
 
 - A voter installs the official app (wallet) and opts in to electronic participation.
     
-- The municipality **shares the secret `γ`** with the voter **securely**, enabling the voter to store their participation credential within the app.
+- The municipality **shares the secret $\gamma$** with the voter **securely**, enabling the voter to store their participation credential within the app.
     
-- With  γ the voter creates the extended LH15 private tuple `(α, β, γ)`within the wallet and can compute the public credential `u = h₁^α · h₂^β · h₃^γ`.
+- With  γ the voter creates the extended LH15 private tuple $(\alpha, \beta, \gamma)$ within the wallet and can compute the public credential $u=h_1^\alpha \cdot h_2^\beta \cdot h_3^\gamma$.
   
 - The public credential is then sent **over an authentic channel** to the municipality.
+  
+- The municipality can now **provide** an **eligibility set** on a **daily** base.
     
-The voter becomes eligible to also participate electronically — using the same underlying data as in the paper-based phase.
+The voter has now been given the ability to also participate electronically — using the same underlying data as in the paper-based phase.
 
 
-### 3. **Full Hybrid: Dual Submission Channels**
+#### b) Vote Submission
 
-- For signing, the voter now has an additional option. They can now create **a zero-knowledge proof of eligibility** along with an **encryption of `γ`** on their wallet and send it to the **Public Bulletin Board**:
+- For voting, the voter can now also chose the electronic channel: Therefore they create  the mentioned **zero-knowledge proof of eligibility** along with an **encryption of `γ`** in their app and send it to the **Public Bulletin Board**:
     
-    - `e = E_pk(γ)`
+    - $e = E_{pk}(\gamma)$`
         
-    - Plus proofs (`π₁`, `π₂`, `π₃`) as per the extended LH15 protocol
+    - Plus LH15 proofs $(\pi_1, \pi_2, \pi_3)$ extended with $\gamma$:
+	     - $\pi_1$: unchanged (LH15)
+	    - $π₂: NIZKP[(u, r, α, β, γ, s) : c = com_p(u,r) \wedge d = com_q(\alpha, \beta, \gamma, s) \wedge u = h_1^\alpha * h_2^\beta * h_3^\gamma]$
+
+	    - $π₃: NIZKP[(α, β, γ, s, t) : d = com_q(\alpha, \beta, \gamma, s) \wedge \hat{u} = \hat{h}^\beta \wedge e = E_{pk}(\gamma, t)]$
+
+    - This then is sent to the **Public Bulletin Board (PBB)** over an **anonymous channel** (e.g. TOR)
       
-    - This then is sent to the **Public Bulletin Board (PBB)** over an **anonymous channel**
-      
-    - Only valid tuples  ((`π₁`, `π₂`, `π₃`) , e)` are accepted
+    - Only valid tuples  $(c,d,\hat{u},e, \pi_1, \pi_2, \pi_3 )$ are accepted
         
 - After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
     
-    - All encrypted `γ` values from electronic votes (`e`)
+    - All encrypted $\gamma$ values from electronic votes ($e$)
         
-    - All encrypted `γ` values from paper submissions (`f`)
+    - All encrypted $\gamma$ values from paper submissions ($f$)
         
 - Duplicates are detected and resolved without revealing the voter’s identity.
     
@@ -94,17 +108,17 @@ The system is now fully hybrid gaining the following properties:
 - **Participation-privacy for all participants**
 - **Fully verifiable**
 
-### 4. **Electronic Only**
+### 3. **Electronic Only**
 
-- If desired, the paper option can be eradicated from the system. This brings the benefit of getting rid of the 'Unterschrifte Bschiss', strengthening of participation privacy and reduction of trust. The system can drop the need for `γ` so the voter now only has to create **a zero-knowledge proof of eligibility** on their wallet and send it to the **Public Bulletin Board**:
+- If desired, the paper option can be eradicated from the system. This brings the benefit of voiding the attack path for the 'Unterschrifte Bschiss', and liberates from  distributed trust assumptions strengthening participation privacy. The system can drop the need for `γ` so the voter now only has to create the original **LH15 zero-knowledge proof of eligibility** on their wallet to be sent to the **Public Bulletin Board** over an anonymous channel:
   
-    * Proofs (π₁, π₂) as per the original LH15 protocol
+    * Proofs $(\pi_1, \pi_2, \pi_3)$ as per the original LH15 protocol
       
     - This then is sent to the **Public Bulletin Board (PBB)** over an **anonymous channel**
       
-    - Only valid tuples  (`π₁`, `π₂`) are accepted
+    - Only valid tuples $(\pi_1, \pi_2, \pi_3)$ are accepted
       
-    - At any time, the actual tally is provided by all valid (`π₁`, `π₂`) tuples.
+    - At any time, the actual tally is provided by all valid $(\pi_1, \pi_2, \pi_3)$ tuples.
     
 The system is now complete electronic gaining the following properties:
 - **No double participations** even during voting period
@@ -123,40 +137,6 @@ The system is now complete electronic gaining the following properties:
 - **Continuity of existing processes**: Paper-based workflows remain compatible.
     
 - **Universal verifiability**: All steps — including registration, submission, and tallying — are publicly auditable.
-
-## Summary of Cryptographic Flow
-
-### Credentials & Proofs (Extended LH15)
-
-- **Voter private values**: `α`, `β`, `γ`
-    
-- **Public credential**: `u = h₁^α · h₂^β · h₃^γ`
-    
-- **Encrypted γ**: `e = E_pk(γ, t)`
-    
-- **Commitment**: `d = com_q(α, β, γ, s)`
-    
-- **Proofs**:
-    
-    - `π₁`: unchanged (LH15)
-        
-    - `π₂`: extended to include `γ`
-        
-    - `π₃`: proof of correct encryption of `γ`
-        
-
-### Paper Submission Digitization
-
-- Municipality encrypts `γ` and posts:  
-    `f = E_pk(γ, t)`
-    
-### Duplicate Detection
-
-- **PET** between:
-    
-    - List `E`: electronic submissions `e`
-        
-    - List `F`: paper submissions `f`
         
 ## Conclusion
 
@@ -168,7 +148,8 @@ This protocol **extends the peer-reviewed LH15** with a simple cryptographic mec
 - **No trust in central authorities**
     
 
-Voters and municipalities can transition smoothly, at their own pace, while preserving the 'feeling' of the current system.## User Experience
+Voters and municipalities can transition smoothly, at their own pace, while preserving the 'feeling' of the current system. 
+
 
 ------------
 

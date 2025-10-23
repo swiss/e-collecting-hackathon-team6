@@ -83,13 +83,13 @@ The voter has now been given the ability to also participate electronically — 
 
 - For voting, the voter can now also chose the electronic channel: Therefore they create  the mentioned **zero-knowledge proof of eligibility** along with an **encryption of `γ`** in their app and send it to the **Public Bulletin Board**:
     
-    - $e = E_{pk}(\gamma)$`
+    - $e = E_{pk}(\gamma)$
         
     - Plus LH15 proofs $(\pi_1, \pi_2, \pi_3)$ extended with $\gamma$:
 	     - $\pi_1$: unchanged (LH15)
-	    - $\pi_2: NIZKP[(u, r, α, β, γ, s) : c = com_p(u,r) \wedge d = com_q(\alpha, \beta, \gamma, s) \wedge u = h_1^\alpha * h_2^\beta * h_3^\gamma]$
+	    - $\pi_2: \text{NIZKP}[(u, r, α, β, γ, s) : c = com_p(u,r) \wedge d = com_q(\alpha, \beta, \gamma, s) \wedge u = h_1^\alpha * h_2^\beta * h_3^\gamma]$
 
-	    - $\pi_3: NIZKP[(α, β, γ, s, t) : d = com_q(\alpha, \beta, \gamma, s) \wedge \hat{u} = \hat{h}^\beta \wedge e = E_{pk}(\gamma, t)]$
+	    - $\pi_3: \text{NIZKP}[(α, β, γ, s, t) : d = com_q(\alpha, \beta, \gamma, s) \wedge \hat{u} = \hat{h}^\beta \wedge e = E_{pk}(\gamma, t)]$
 
     - This then is sent to the **Public Bulletin Board (PBB)** over an **anonymous channel** (e.g. TOR)
       

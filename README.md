@@ -93,7 +93,7 @@ The voter has now been given the ability to also participate electronically — 
 
     - This then is sent to the **Public Bulletin Board (PBB)** over an **anonymous channel** (e.g. TOR)
       
-    - Only valid tuples  $(c,d,\hat{u},e, \pi_1, \pi_2, \pi_3 )$ are accepted
+    - Only valid tuples  $(c,d,\hat{u},\pi_1, \pi_2, \pi_3 )$ are accepted
         
 - After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
     

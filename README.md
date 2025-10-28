@@ -1,4 +1,4 @@
-# 6) Anonymous Fully Verifiable E-Collecting
+# 6) Anonymous Participation of Eligible Voters
 
 *Over the course of two days, you will develop your solution for collecting electronic signatures for popular initiatives and referendums from A to Z, addressing the 10 topics outlined in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). Your prototype can be conceptual, clickable, and/or technical. Either way, you should clearly present the interactions and data flows between actors, software, and infrastructure components over time, as well as the user experience of these actors.*
 
@@ -23,7 +23,7 @@ See below
 # Privacy-Preserving Verifiable Hybrid E-Collecting
 _A Trust-Minimized Protocol for Gradual Transition to Verifiable E-Collecting_
 
-This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees:
+This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees (Topic 3, Topic 5, Topic 6, Topic 8):
 
 - No duplicate participations
 - Seamless 'upgrade' path from paper to electronic participation
@@ -31,6 +31,7 @@ This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106
 - No compromise of voter privacy (Keine Gesinnungsdatenbank)
 
 Despite its cryptographic rigor, the system remains **lightweight** and **privacy-preserving** at scale.
+(Topic 9 auf Betreiberebene)
 
 **LH15** provides the following security properties on cryptographic level as a Zero knowledge proof (ZKP): 
 An anonymous Set-membership-proof with single use Rate-Limiter under zero knowledge. 
@@ -57,9 +58,9 @@ The protocol enables a **simple initial deployment** that builds directly on **c
 - This step anchors each vote cryptographically — **without requiring** any **voter-side infrastructure**.
       
 The system remains fully paper-based but already supports:
-- **Electronic universal verifiable tallying**
-- **Electronic Participation Verifiability**
-- **Eligibility Verifiability**
+- **Electronic universal verifiable tallying** (Topic 5, 6)
+- **Electronic Participation Verifiability** (Topic 5, 6)
+- **Eligibility Verifiability** (Topic 5, Topic 6)
     
 
 ### 2. **Full Hybrid: Dual Submission Channels**
@@ -76,7 +77,7 @@ If the municipality is ready, it then opens the e-collecting channel towards its
   
 - The municipality can now **provide** an **eligibility set** on a **daily** base.
     
-The voter has now been given the ability to also participate electronically — using the same underlying data as in the paper-based phase.
+The voter has now been given the ability to also participate electronically — using the same underlying data as in the paper-based phase. (Topic 8)
 
 
 #### b) Vote Submission
@@ -104,9 +105,9 @@ The voter has now been given the ability to also participate electronically — 
 - Duplicates are detected and resolved without revealing the voter’s identity.
     
 The system is now fully hybrid gaining the following properties:
-- **No double participations**
-- **Participation-privacy for all participants**
-- **Fully verifiable**
+- **No double participations** (Topic 5, Topic 8)
+- **Participation-privacy for all participants** (Topic 7)
+- **Fully verifiable** (Topic 6))
 
 ### 3. **Electronic Only**
 
@@ -121,10 +122,10 @@ The system is now fully hybrid gaining the following properties:
     - At any time, the actual tally is provided by all valid $(\pi_1, \pi_2, \pi_3)$ tuples.
     
 The system is now complete electronic gaining the following properties:
-- **No double participations** even during voting period
-- **Everlasting Participation-privacy for all participants**
-- **Fully verifiable**
-- **Simplicity**
+- **No double participations** even during voting period (Topic 5)
+- **Everlasting Participation-privacy for all participants** (Topic 7)
+- **Fully verifiable** (Topic 5, Topic 6)
+- **Simplicity** The municipality does not have to check or manage any signatures anymore. (Topic 9)
     
 ## Benefits of This Bootstrapping Approach
 
@@ -157,26 +158,35 @@ Voters and municipalities can transition smoothly, at their own pace, while pres
 
 ## Topics addressed
 
-*Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.*
+The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) are directly addressed by the proposed protocol:
 
-| Topic | (How) is it addressed? |
-| -| ------- |
-| 1 |  |
-| 2 |  |
-| 3 |  |
-| ... |  |
+**Topic 5** «Ausschluss unrechtmässiger Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
+
+**Topic 6** «Verhinderung unterschlagener Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
+
+**Topic 7** «Wahrung des Stimmgeheimnisses» (vgl. Kapitel 2.7 Postulatsbericht)
+
+**Topic 8** «Integration mit dem papierbasierten Prozess»
+
+**Topic 9** «Erleichterte Einführung für Gemeinden mit Effizienzgewinn; auf der Grundlage von bestehender Infrastruktur und bestehenden Prozessen»
+
+| Topic | (How) is it addressed?                                                                                                                                                                                                                                                           |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 5     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br> **Electronic Only** - No double participations even during voting period - Fully verifiable |
+| 6     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br>**Electronic Only** -Fully verifiable                                                        |
+| 7     | **Full Hybrid: Dual Submission Channels** Participation-privacy for all participants<br><br>**Electronic Only** Everlasting Participation-privacy for all participants<br><br><br><br>                                                                                           |
+| 8     | **Start: Paper-Only Collection Using Cryptographic Anchors**<br><br>**Full Hybrid: Dual Submission Channels** After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)**                                                                    |
+| 9     | **Introduction** Despite its cryptographic rigor, the system remains **lightweight** and **privacy-preserving** at scale.<br><br>**3. Electronic only** Simplicity as the municipality does not have to check or manage any signatures anymore.                                  |
 
 ## Key Strenghts and Weaknesses
 
 *List the key strengths and weaknesses of your solution.*
 
 ### Strengths:
-- ...
-- ...
+- !
 
 ### Weaknesses:
-- ...
-- ...
+- ?
 
 ## Getting Started
 

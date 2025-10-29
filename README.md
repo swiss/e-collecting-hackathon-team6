@@ -96,13 +96,15 @@ The voter has now been given the ability to also participate electronically — 
       
     - Only valid tuples  $(c,d,\hat{u}, e, \pi_1, \pi_2, \pi_3 )$ are accepted
         
-- After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
+- - After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)** between:
     
     - All encrypted $\gamma$ values from electronic votes ($e$)
         
     - All encrypted $\gamma$ values from paper submissions ($f$)
         
-- Duplicates are detected and resolved without revealing the voter’s identity.
+- Duplicates are detected and resolved without revealing the voter’s identities.
+  
+- In order to have a more **accurate tally** during the **voting phase**, **additional PETs** can be run more frequently, e.g. weekly based.
     
 The system is now fully hybrid gaining the following properties:
 - **No double participations** (Topic 5, Topic 8)
@@ -183,10 +185,12 @@ The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de
 *List the key strengths and weaknesses of your solution.*
 
 ### Strengths:
-- !
+- See Conclusion
 
 ### Weaknesses:
-- ?
+- If a PET results in a match
+  - **The municipality** will **learn** about the fact that a **specific voter** participated over **both channels**. But the municipality does not learn more than that.
+  - **The system** learns that **some voter** has participated over **both channels** and the **tally changes** accordingly. But the system does not learn more than that.
 
 ## Getting Started
 

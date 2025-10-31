@@ -212,8 +212,14 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 - Reto Koenig/knr1 (role)
 - Philipp Locher/philoc (role)
-- Name/GitHub Account (role)
-- ...
+- Lukas Happle/lukas-happle (Pitch holder)
+- Léonard Baragli/baraleo (Pitch holder)
+- Jonas Sulzer/violoncelloCH
+- Julian Levkov/julian-lev
+- Ariel Pelayo/arielpelayo (backend dev)
+- Gionathan Diani/giodi (ux)
+- Lukas Streit/lukpu (ux)
+- Yoan Giovannini/unglazedstamp (backend dev)
 
 ## License
 

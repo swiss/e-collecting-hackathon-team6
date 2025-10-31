@@ -6,11 +6,13 @@ rectangle {
   usecase "Get board" as ic_uc1
   usecase "Distribute campaign" as ic_uc2
   usecase "Gather statistics" as ic_uc3
+  usecase "Gather data for marketing" as ic_uc4
   
 }
 ic-->ic_uc1
 ic-->ic_uc2
 ic-->ic_uc3
+ic-->ic_uc4
 
 actor "Voter" as vot
 rectangle {
@@ -41,5 +43,19 @@ rectangle {
 mun-->mun_uc1
 mun-->mun_uc2
 can-->mun_uc2
+
+actor "federal chancellery" as fc
+rectangle {
+  usecase "Decision on iniative launch" as fc_uc1
+  usecase "Verify signatures" as fc_uc2
+  usecase "Bestätigung Zustandekommen Initiative" as fc_uc3
+  usecase "Zwischenarchivierung" as fc_uc4
+  usecase "Vernichtung Sammelbögen" as fc_uc5
+}
+fc-->fc_uc1
+fc-->fc_uc2
+fc-->fc_uc3
+fc-->fc_uc4
+fc-->fc_uc5
 
 @enduml

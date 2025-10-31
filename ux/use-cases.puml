@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+
+actor "Initiative comitee" as ic
+rectangle {
+  usecase "Get board" as ic_uc1
+  usecase "Distribute campaign" as ic_uc2
+  usecase "Gather statistics" as ic_uc3
+  
+}
+ic-->ic_uc1
+ic-->ic_uc2
+ic-->ic_uc3
+
+actor "Voter" as vot
+rectangle {
+  usecase "Get voting key" as vot_uc1
+  usecase "Get information about initiative" as vot_uc2
+  usecase "Register vote" as vot_uc3
+  usecase "Verify vote" as vot_uc4
+  usecase "Gather statistics" as vot_uc5
+  usecase "Transfer key between devices" as vot_uc6
+  usecase "Recover key" as vot_uc7
+}
+vot-->vot_uc1
+vot-->vot_uc2
+vot-->vot_uc3
+vot-->vot_uc4
+vot-->vot_uc5
+vot-->vot_uc6
+vot_uc7 .> vot_uc1 : includes
+
+actor "canton" as can
+actor "municipality" as mun
+rectangle {
+  usecase "Issue key" as mun_uc1
+  usecase "Register handwritten votes" as mun_uc2
+
+  
+}
+mun-->mun_uc1
+mun-->mun_uc2
+can-->mun_uc2
+
+@enduml

@@ -62,7 +62,8 @@ The protocol enables a **simple initial deployment** that builds directly on **c
 3. Define election generator **$\hat{h} \in \mathbb{G}_q$**.
 4. Post **$(U, A, \hat{h})$** to the bulletin board on a daily basis.
 
-### Vote Casting by Voter (E-Signing)
+### Vote Casting
+#### Vote Casting by Voter (E-Signing)
 1. Encrypt **$\gamma$** using the public encryption key for the given event **$e = E_{pk}(\gamma)$**.
 2. Compute election credential **$\hat{u} = \hat{h}^\beta$**.
 3. Pick **$r \in_R \mathbb{Z}_p$** and **$s \in_R \mathbb{Z}_q$** and compute commitments **$c = \text{com}_p(u, r)$** and **$d = \text{com}_q(\alpha, \beta, \gamma, s)$**.
@@ -72,7 +73,7 @@ The protocol enables a **simple initial deployment** that builds directly on **c
    - $\pi_3 = \text{NIZKP}_e[(\alpha, \beta, \gamma, s, t) : d = \text{com}_q(\alpha, \beta, \gamma, s) \wedge \hat{u} = \hat{h}^\beta \wedge e = E_{pk}(\gamma, t)]$
 5. Post ballot **$B = (c, d, e, \hat{u}, \pi_1, \pi_2, \pi_3)$** to the bulletin board over an anonymous channel.
 
-### Vote Casting by Election Administration (Paper Signature)
+#### Vote Casting by Election Administration (Paper Signature)
 1. Upon receiving a valid paper signature:
    - Encrypt the corresponding voter's **$\gamma$** using the public encryption key for the given event **$f = E_{pk}(\gamma)$**.
    - Send **$f$** over an authentic channel to the bulletin board.

@@ -24,9 +24,9 @@
 # Privacy-Preserving Verifiable Hybrid E-Collecting
 _A Trust-Minimized Protocol for Gradual Transition to Verifiable E-Collecting_
 
-This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees (Topic 3, Topic 5, Topic 6, Topic 8):
+This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees:
 
-- No duplicate participations
+- No duplicate participation
 - Seamless 'upgrade' path from paper to electronic participation
 - No single trusted central authorities holding secrets
 - No compromise of voter privacy (Keine Gesinnungsdatenbank)
@@ -191,9 +191,14 @@ The system is now complete electronic gaining the following properties:
 
 This protocol **extends the peer-reviewed LH15** with a simple cryptographic mechanism that enables municipalities to **bootstrap hybrid e-collecting** from existing paper-based workflows — with:
 
-- **No need for immediate infrastructure change**  
+- **Transparency**
+- **Straight-forward implementation**
+- **Data remains local**
+- **Personal verifiability**
+- **Availability of information**
+- **No need for immediate infrastructural change**  
 - **Strong participation privacy** 
-- **Universal, disputefree verifiability**
+- **Universal, dispute-free verifiability**
 - **No trust in central authorities**
     
 
@@ -208,6 +213,14 @@ Voters and municipalities can transition smoothly, at their own pace, while pres
 
 The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) are directly addressed by the proposed protocol:
 
+**Topic 1** «Vom Unterstützungswillen zur Unterstützungsbekundung»
+
+**Topic 2** «Zugang zu aktuellen Informationen über die eingereichten Unterstützungsbekundungen» (vgl. insb. Kapitel 2.8.2 des Postulatsberichts)
+
+**Topic 3** «Zuschreibung der Unterstützungsbekundungen an Komitees und Sammelunternehmen»
+
+**Topic 4** «Unterbreitung von Argumenten der Komitees via E-Collecting»
+
 **Topic 5** «Ausschluss unrechtmässiger Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
 
 **Topic 6** «Verhinderung unterschlagener Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
@@ -218,25 +231,40 @@ The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de
 
 **Topic 9** «Erleichterte Einführung für Gemeinden mit Effizienzgewinn; auf der Grundlage von bestehender Infrastruktur und bestehenden Prozessen»
 
+**Topic 10** «E-Collecting für alle föderalen Ebenen» 
+
 | Topic | (How) is it addressed?                                                                                                                                                                                                                                                           |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 5     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br> **Electronic Only** - No double participations even during voting period - Fully verifiable |
-| 6     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br>**Electronic Only** -Fully verifiable                                                        |
-| 7     | **Full Hybrid: Dual Submission Channels** Participation-privacy for all participants<br><br>**Electronic Only** Everlasting Participation-privacy for all participants<br><br><br><br>                                                                                           |
-| 8     | **Start: Paper-Only Collection Using Cryptographic Anchors**<br><br>**Full Hybrid: Dual Submission Channels** After the voting period, the system runs a privacy preserving **Plaintext Equality Test (PET)**                                                                    |
-| 9     | **Introduction** Despite its cryptographic rigor, the system remains **lightweight** and **privacy-preserving** at scale.<br><br>**3. Electronic only** Simplicity as the municipality does not have to check or manage any signatures anymore.                                  |
+| 1     | **Secure Wallet** - The private key provided by the local authority is securely stored on the user's personal device. Each user has a unique key, which can only be stored on a single device at a time. The user uses their private key to officially certify their support via the web platform or an app. The system sends the signature anonymously to the Public Bulletin Board. The user is free to choose when and where to declare their support. |
+| 2     | **Real Time Anonymous Campaign Statistics** - The per-campaign Bulletin (electronic and paper) Boards allow anyone to check the number of signatures published. Additionally, each participant can verify that their support is published on the Bulletin Board thanks to cryptography. The electronic signatures are anonymous and guaranteed to be unique. |
+| 3     | **Reference Number** - Each committee is provided with a reference number, which can be encoded in the QR code that the committee uses for street campaigns. The reference number can also be specified manually by the user when signing from home. |
+| 4     | **Official Information Only** - The official interface only contains: the official title of the initiative, information about the committees and a link for more information. Additional information could be added as it is independent of the protocol. An initiative can only be signed online through the official interface to ensure the legitimacy of the information provided. The official interface follows the WCAG (Web Content Accessibility Guidelines) to be accessible for people with disabilities. |
+| 5     | **Verification With Cryptographic Anchor** -  Eligibility of the user is automatically verified by the algorithm. A Plaintext Equality Test (PET) is run, e.g., every week, to compare the paper and electronic signatures and detect double participation. |
+| 6     | **Hybrid Collection Using Cryptographic Anchors** - The committee, as well as anyone, is able to see the number of valid signatures sent by each local authority to the Public Bulletin Board. Additionally, the number of credentials for online signature issued by each local authority can also be computed. The user is able to check that their signature is present on the Bulletin Board. |
+| 7     | **Better Privacy For Electronic Signatures** - With the hybrid system, the user would have the choice to declare their support using a paper or electronic signature.<br><br>*For the paper signature*, the local authority runs the signature through the cryptographic algorithm and it is then anonymously displayed on the Public Bulletin Board. Similarly to the current system, the signature collector(s) and the local authority know the identity of the participants, but not the general public.<br><br>*With the electronic signature*, privacy is ensured end-to-end: only the user can know what they have signed. |
+| 8     | **Start: Paper-Only Collection Using Cryptographic Anchors** - The paper signatures are verified as usual by the local authority. The result is published on the Bulletin Board, allowing anyone to check the real-time progress per local authority. <br><br> **Full Hybrid: Dual Submission Channels** Periodically, the system runs a privacy preserving Plaintext Equality Test (PET) to check for duplicates between the electronic and paper signatures. |
+| 9     | **Intuitive User Interface** - The local authority does not need to to understand the underlying algorithm to use it to provide the public and private keys to the user and enter the signatures in the system. The system also lightens their workload, as they do not need to manually verify each signature anymore. |
+| 10     | **Adaptation To All Federal Levels** - The system can be used to perform the signature collection for only one canton or one municipality. The only catch is that at the municipality level, a second entity (i.e., the canton) should be part of the process to guarantee anonymity. |
 
-## Key Strenghts and Weaknesses
 
-*List the key strengths and weaknesses of your solution.*
+## Key Strengths and Weaknesses
 
 ### Strengths:
-- See Conclusion
+- **Transparency:** The cryptographic algorithm is fully open-source.
+- **Straight-forward implementation:** The protocol can be implemented by any (and even multiple for increased security) cryptography-oriented company.
+- **Data remains local:** The personal data never leaves the local authority's database. 
+- **Personal verifiability:** The user can verify that their signature has been counted using their private key.
+- **Availability of information:** The Public Bulletin Board is available to the general public.
+- **No need for immediate infrastructural change:** The system can be progressively rolled out.
+- **Strong participation privacy:** Anonymity of the signature is guaranteed by design.
+- **Universal, dispute-free authenticity:** The protocol ensures the uniqueness and validity of the signature.
+- **No trust in central authorities necessary:** Verification is distributed between local authorities.
 
 ### Weaknesses:
 - If a PET results in a match
   - **The municipality** will **learn** about the fact that a **specific voter** participated over **both channels**. But the municipality does not learn more than that.
   - **The system** learns that **some voter** has participated over **both channels** and the **tally changes** accordingly. But the system does not learn more than that.
+- The $\beta$ coefficient, like every modern widespread cryptography algorithm, is vulnerable to quantum computing. If quantum computers become reality, the secrecy of the user's identity is still guaranteed, but the set of signatures they have submitted would be revealed.
 
 ## Getting Started
 
@@ -260,12 +288,12 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 - Philipp Locher/philoc (role)
 - Lukas Happle/lukas-happle (Pitch holder)
 - Léonard Baragli/baraleo (Pitch holder)
-- Jonas Sulzer/violoncelloCH
-- Julian Levkov/julian-lev
-- Ariel Pelayo/arielpelayo (backend dev)
-- Gionathan Diani/giodi (ux)
-- Lukas Streit/lukpu (ux)
-- Yoan Giovannini/unglazedstamp (backend dev)
+- Jonas Sulzer/violoncelloCH (Cryptography Analyst)
+- Julian Levkov/julian-lev (Cryptography Analyst)
+- Ariel Pelayo/arielpelayo (Cybersecurity Analyst)
+- Yoan Giovannini/unglazedstamp (Cybersecurity Analyst)
+- Gionathan Diani/giodi (UX Designer)
+- Lukas Streit/lukpu (UX Designer)
 
 ## License
 

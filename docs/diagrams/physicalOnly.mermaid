@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant fedc as Federal Council
+    box rgb(230,230,250) Public Board
+        participant boardmun as Municipality
+        participant boardecol as E-Collection
+    end
+    
+    box Municipality A
+        participant muna as Municipality
+        participant resa as Resident A
+        participant resb as Resident B
+    end
+
+    resa->>muna: Sign physically
+    muna->>muna: Verify Resident
+    muna->>boardmun: Post Encrypted Share Key of Resident A (γ)
+
+    resb->>muna: Sign physically
+    muna->>muna: Verify Resident
+    muna->>boardmun: Post Encrypted Share Key of Resident B (γ)
+    fedc->>boardmun: Post final result and duplicate ballots / shared keys

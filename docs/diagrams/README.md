@@ -132,3 +132,6 @@ sequenceDiagram
     fedc->>fedc: Verify every Participation
 
 ```
+
+# Reference System Context
+![Diagram shows a reference implementation for the protocol.](C4_System_Context.drawio.svg "Title")

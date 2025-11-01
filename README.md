@@ -23,9 +23,9 @@
 # Privacy-Preserving Verifiable Hybrid E-Collecting
 _A Trust-Minimized Protocol for Gradual Transition to Verifiable E-Collecting_
 
-This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees (Topic 3, Topic 5, Topic 6, Topic 8):
+This proposal extends **LH15** ([link](https://e-voting.bfh.ch/app/download/6106455461/LH15.pdf?t=1609753513)), a peer-reviewed cryptographic protocol for anonymous participation, to support **hybrid e-collecting**. It explicitly supports the coexistence of **traditional paper-based** and **electronic** signature collection, with strong guarantees:
 
-- No duplicate participations
+- No duplicate participation
 - Seamless 'upgrade' path from paper to electronic participation
 - No single trusted central authorities holding secrets
 - No compromise of voter privacy (Keine Gesinnungsdatenbank)

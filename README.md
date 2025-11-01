@@ -20,6 +20,7 @@
 
 --------
 
+
 # Privacy-Preserving Verifiable Hybrid E-Collecting
 _A Trust-Minimized Protocol for Gradual Transition to Verifiable E-Collecting_
 
@@ -42,6 +43,50 @@ In the **LH15** paper the complete protocol run is provided in a concise way in 
 ## Key Concept: Seamless Bootstrapping from Paper to Hybrid
 
 The protocol enables a **simple initial deployment** that builds directly on **current paper-based processes**, then **evolves naturally** into a full hybrid system — without requiring abrupt system changes or voter behavior shifts. The eventual transition to the pure electronic form provides everlasting participation privacy.
+
+---
+## E-Collecting Protocol Details
+
+### Preparation (Election Administration)
+1. Pick secret value **$\gamma \in_R \mathbb{Z}_q$** for each eligible voter.
+
+### Registration (Voter)
+1. Get **$\gamma$** from election administration over an authentic channel.
+2. Pick private credential **$\alpha, \beta \in_R \mathbb{Z}_q$**.
+3. Compute public credential **$u = h_1^\alpha h_2^\beta h_3^\gamma \in \mathbb{G}_q$**.
+4. Send **$u$** over an authentic channel to the election administration.
+
+### Election Preparation (Election Administration)
+1. Define **$U = ((V_1, u_1), \ldots, (V_M, u_M))$** based on the electoral roll.
+2. Compute coefficients **$A = (a_0, \ldots, a_M)$** of **$P(X) = \prod_{i=1}^M (X - u_i) \in \mathbb{Z}_p[X]$**.
+3. Define election generator **$\hat{h} \in \mathbb{G}_q$**.
+4. Post **$(U, A, \hat{h})$** to the bulletin board on a daily basis.
+
+### Vote Casting by Voter (E-Signing)
+1. Encrypt **$\gamma$** using the public encryption key for the given event **$e = E_{pk}(\gamma)$**.
+2. Compute election credential **$\hat{u} = \hat{h}^\beta$**.
+3. Pick **$r \in_R \mathbb{Z}_p$** and **$s \in_R \mathbb{Z}_q$** and compute commitments **$c = \text{com}_p(u, r)$** and **$d = \text{com}_q(\alpha, \beta, \gamma, s)$**.
+4. Compute the following non-interactive proofs:
+   - $\pi_1 = \text{NIZKP}_e[(u, r) : c = \text{com}_p(u, r) \wedge P(u) = 0]$
+   - $\pi_2 = \text{NIZKP}_e[(u, r, \alpha, \beta, \gamma, s) : c = \text{com}_p(u, r) \wedge d = \text{com}_q(\alpha, \beta, \gamma, s) \wedge u = h_1^\alpha h_2^\beta h_3^\gamma]$
+   - $\pi_3 = \text{NIZKP}_e[(\alpha, \beta, \gamma, s, t) : d = \text{com}_q(\alpha, \beta, \gamma, s) \wedge \hat{u} = \hat{h}^\beta \wedge e = E_{pk}(\gamma, t)]$
+5. Post ballot **$B = (c, d, e, \hat{u}, \pi_1, \pi_2, \pi_3)$** to the bulletin board over an anonymous channel.
+
+### Vote Casting by Election Administration (Paper Signature)
+1. Upon receiving a valid paper signature:
+   - Encrypt the corresponding voter's **$\gamma$** using the public encryption key for the given event **$f = E_{pk}(\gamma)$**.
+   - Send **$f$** over an authentic channel to the bulletin board.
+
+### Public Tallying
+1. Retrieve the set **$\mathcal{B}$** of all ballots from the bulletin board.
+2. For each **$B \in \mathcal{B}$**, verify **$\pi_1, \pi_2, \pi_3$**.
+3. Detect duplicate e-signatures based on identical values **$\hat{u}$** and resolve conflicts using privacy-preserving plaintext equality test (PET) between:
+   - All encrypted **$\gamma$** values from electronic votes (**$e$**)
+   - All encrypted **$\gamma$** values from paper submissions (**$f$**)
+4. Compute the final election result.
+
+---
+
 
 ## Bootstrapping Strategy
 

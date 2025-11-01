@@ -10,7 +10,9 @@
 ## Prozess Beschreibung
 
 - Gemeinde bestätigt Stimmrecht (E-ID, E-Gov, Vor Ort)
-- Online anonym abstimmen (Zero-Knowledge Proof des Stimmrechts)
+- Online anonym partizipieren (Zero-Knowledge Proof des Stimmrechts)
+- Physische Teilnahme auch nach Registration möglich
+- Gemeinde wandelt physische Unterschriften um die Auszählung zu vereinfachen
 
 ## Demo
 

@@ -198,16 +198,16 @@ The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de
 | 7     | **Better Privacy For Electronic Signatures** - With the hybrid system, the user would have the choice to declare their support using a paper or electronic signature.<br><br>*For the paper signature*, the local authority runs the signature through the cryptographic algorithm and it is then anonymously displayed on the Public Bulletin Board. Similarly to the current system, the signature collector(s) and the local authority know the identity of the participants, but not the general public.<br><br>*With the electronic signature*, privacy is ensured end-to-end: only the user can know what they have signed. |
 | 8     | **Start: Paper-Only Collection Using Cryptographic Anchors** - The paper signatures are verified as usual by the local authority. The result is published on the Bulletin Board, allowing anyone to check the real-time progress per local authority. <br><br> **Full Hybrid: Dual Submission Channels** Periodically, the system runs a privacy preserving Plaintext Equality Test (PET) to check for duplicates between the electronic and paper signatures. |
 | 9     | **Intuitive User Interface** - The local authority does not need to to understand the underlying algorithm to use it to provide the public and private keys to the user and enter the signatures in the system. The system also lightens their workload, as they do not need to manually verify each signature anymore. |
-| 10     | **** The system can be used to perform the signature collection for only one canton or one municipality. The only catch is that at the municipality level, a second entity (i.e., the canton) should be part of the process to guarantee anonymity. |
+| 10     | **Adaptation To All Federal Levels** - The system can be used to perform the signature collection for only one canton or one municipality. The only catch is that at the municipality level, a second entity (i.e., the canton) should be part of the process to guarantee anonymity. |
 
 
-## Key Strenghts and Weaknesses
+## Key Strengths and Weaknesses
 
 ### Strengths:
 - **Transparency:** The cryptographic algorithm is fully open-source.
 - **Straight-forward implementation:** The protocol can be implemented by any (and even multiple for increased security) cryptography-oriented company.
 - **Data remains local:** The personal data never leaves the local authority's database. 
-- **Personal verifiability:** The user can verify that their signature has been counted using thir private key.
+- **Personal verifiability:** The user can verify that their signature has been counted using their private key.
 - **Availability of information:** The Public Bulletin Board is available to the general public.
 - **No need for immediate infrastructural change:** The system can be progressively rolled out.
 - **Strong participation privacy:** Anonymity of the signature is guaranteed by design.

@@ -22,7 +22,7 @@
             <mxGeometry x="510" y="920" width="1010" height="580" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Public board for an initiative" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-4">
+        <object placeholders="1" c4Name="Public Bulletin Board for&lt;br&gt; an initiative" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-4">
           <mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="550" y="1190" width="240" height="120" as="geometry" />
           </mxCell>
@@ -44,6 +44,16 @@
         </object>
         <mxCell id="FcRCeqWTZJccAGX8sSIf-61" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1" source="FcRCeqWTZJccAGX8sSIf-7" target="FcRCeqWTZJccAGX8sSIf-59">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ujc3bZ9peNVxK2XQbyBj-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1" source="FcRCeqWTZJccAGX8sSIf-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1800" y="1500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ujc3bZ9peNVxK2XQbyBj-29" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="ujc3bZ9peNVxK2XQbyBj-28">
+          <mxGeometry x="-0.2068" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <object placeholders="1" c4Name="Federal Chancellery" c4Type="Organization" c4Description="Federal Chancellery manages &lt;br&gt;the public board system. Creates public boards." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-7">
           <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1" parent="1">
@@ -115,7 +125,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="Key Exchange API" c4Type="Container" c4Technology="e.g. HTTPS/JSON" c4Description="Retrieval of shared key from &lt;br&gt;municipality and submission&lt;br&gt; of public key." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-33">
+        <object placeholders="1" c4Name="Key Exchange&lt;br&gt; Service" c4Type="Container" c4Technology="e.g. HTTPS/JSON" c4Description="Retrieval of shared key from &lt;br&gt;municipality and submission&lt;br&gt; of public key." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-33">
           <mxCell style="shape=hexagon;size=50;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="540" y="545" width="200" height="170" as="geometry" />
           </mxCell>
@@ -198,12 +208,12 @@
             <mxPoint x="510" y="1260" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FcRCeqWTZJccAGX8sSIf-64" value="&lt;div&gt;Makes API call to&lt;/div&gt;&lt;div&gt;[TCP/TOR]&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="FcRCeqWTZJccAGX8sSIf-63">
+        <mxCell id="FcRCeqWTZJccAGX8sSIf-64" value="&lt;div&gt;Post Ballot&lt;/div&gt;&lt;div&gt;[TCP/TOR]&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="FcRCeqWTZJccAGX8sSIf-63">
           <mxGeometry x="0.0016" relative="1" as="geometry">
             <mxPoint x="-332" y="-185" as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="Expression of &lt;br&gt;Support Registration" c4Type="Container" c4Technology="API" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-62">
+        <object placeholders="1" c4Name="Ballot Registration Service" c4Type="Container" c4Technology="API" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-62">
           <mxCell style="shape=hexagon;size=50;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="570" y="940" width="200" height="170" as="geometry" />
           </mxCell>
@@ -221,12 +231,12 @@
             <mxPoint x="-5" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="List Push Service" c4Type="Component" c4Technology="e.g. Cron Job / Bash" c4Description="Gathers list of eligible participants &lt;br&gt;(gathering of coefficient of public keys)." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-75">
+        <object placeholders="1" c4Name="Eligibility Set Post Service" c4Type="Component" c4Technology="e.g. Cron Job / Bash" c4Description="Gathers list of eligible participants &lt;br&gt;(gathering of coefficient of public keys)." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-75">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
-            <mxGeometry x="1241" y="680" width="240" height="120" as="geometry" />
+            <mxGeometry x="1241" y="700" width="240" height="120" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Public list of&lt;br&gt; elegible participants" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-79">
+        <object placeholders="1" c4Name="Public list containing a set of eligible participants" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-79">
           <mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="1240.5" y="1190" width="240" height="120" as="geometry" />
           </mxCell>
@@ -236,7 +246,7 @@
             <mxGeometry x="1653" y="1080" width="307" height="420" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Public board for&lt;br&gt; an initiative (municipality)" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support via the municipality are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-83">
+        <object placeholders="1" c4Name="Public Bulletin Board for&lt;br&gt; an initiative (municipality)" c4Type="Container" c4Technology="e.g. append-only JSON-File" c4Description="Public bulletin board on which expressions of support via the municipality are recorded." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-83">
           <mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="881" y="1190" width="240" height="120" as="geometry" />
           </mxCell>
@@ -246,7 +256,7 @@
             <mxGeometry x="80" y="300" width="240" height="120" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Expression of Registration Submitter" c4Type="Component" c4Technology="e.g. Innosolv Module" c4Description="Expression of support is transmitted. " label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-92">
+        <object placeholders="1" c4Name="Ballot Post Service" c4Type="Component" c4Technology="e.g. Innosolv Module" c4Description="Service to post ballot on behalf of eligible participant to public bulletin board." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-92">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
             <mxGeometry x="881" y="700" width="240" height="120" as="geometry" />
           </mxCell>
@@ -259,7 +269,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="Expression of &lt;br&gt;Support Registration (Municipality)" c4Type="Container" c4Technology="API with Authentication" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-95">
+        <object placeholders="1" c4Name="Ballot Registration (Municipality)" c4Type="Container" c4Technology="API with Authentication" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="FcRCeqWTZJccAGX8sSIf-95">
           <mxCell style="shape=hexagon;size=50;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="901" y="940" width="200" height="170" as="geometry" />
           </mxCell>
@@ -280,7 +290,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="Public list &lt;br&gt;gathering" c4Type="Container" c4Technology="API with Authentication" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-1">
+        <object placeholders="1" c4Name="Eligibility Set&lt;br&gt;Gathering Service" c4Type="Container" c4Technology="API with Authentication" c4Description="Checks if tuple has correct&lt;br&gt; length and appends to list." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-1">
           <mxCell style="shape=hexagon;size=50;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1" parent="1">
             <mxGeometry x="1261" y="940" width="200" height="170" as="geometry" />
           </mxCell>
@@ -306,7 +316,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="List Gathering" c4Type="Component" c4Technology="e.g. Cron Job / Bash" c4Description="Gathers list of eligible participants &lt;br&gt;(gathering of coefficient of public keys)." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-6">
+        <object placeholders="1" c4Name="Bulletin Board Gathering" c4Type="Component" c4Technology="e.g. Cron Job / Bash" c4Description="Gathers bulletin boards." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-6">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
             <mxGeometry x="1680" y="1270" width="240" height="120" as="geometry" />
           </mxCell>
@@ -319,7 +329,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="List Gathering" c4Type="Component" c4Technology="e.g. Cron Job / Bash" c4Description="Verifies signatures, counts valid signatures." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-10">
+        <object placeholders="1" c4Name="Ballot Validation / Counting" c4Type="Component" c4Technology="Software System" c4Description="Ballots from public bulletin boards get validated and counted." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ujc3bZ9peNVxK2XQbyBj-10">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1" parent="1">
             <mxGeometry x="1680" y="1100" width="240" height="120" as="geometry" />
           </mxCell>

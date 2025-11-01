@@ -162,6 +162,8 @@ Voters and municipalities can transition smoothly, at their own pace, while pres
 
 The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) are directly addressed by the proposed protocol:
 
+**Topic 1** « De la volonté de soutien à la déclaration de soutien »
+
 **Topic 5** «Ausschluss unrechtmässiger Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
 
 **Topic 6** «Verhinderung unterschlagener Unterstützungsbekundungen» (vgl. Kapitel 2.7 Postulatsbericht)
@@ -174,6 +176,7 @@ The following topics presented in the [guidelines](https://www.bk.admin.ch/bk/de
 
 | Topic | (How) is it addressed?                                                                                                                                                                                                                                                           |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | **Portefeuille sécurisé** - Clef privée fournie par la commune et stockée sur le TPM d'un appareil personel - Une clef unique par utilisateur-ice - Un appareil à la fois - L'utilisateur-ice utilise sa clef privée pour attester officiellement de son soutien - Le logiciel envoie la signature anonyment au Public Board - L'utilisateur-rice est libre de choisir le moment et le lieu de sa déclaration de soutien |
 | 5     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br> **Electronic Only** - No double participations even during voting period - Fully verifiable |
 | 6     | **Start: Paper-Only Collection Using Cryptographic Anchors** - Electronic universal verifiable tallying - Electronic Participation Verifiability - Eligibility Verifiability<br><br>**Electronic Only** -Fully verifiable                                                        |
 | 7     | **Full Hybrid: Dual Submission Channels** Participation-privacy for all participants<br><br>**Electronic Only** Everlasting Participation-privacy for all participants<br><br><br><br>                                                                                           |
